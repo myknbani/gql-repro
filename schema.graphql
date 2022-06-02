@@ -1,0 +1,31 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: ID!
+  username: String!
+  memberships: [Membership!]!
+}
+
+type Membership {
+  id: ID!
+  user: User!
+  project: Project!
+}
+
+type Project {
+  id: ID!
+  name: String!
+  description: String!
+  memberships: [Membership!]!
+}
+
+type Query {
+  sayHi(project: ProjectInput!): String!
+}
+
+input ProjectInput {
+  name: String!
+  description: String!
+}
